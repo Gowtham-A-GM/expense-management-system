@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Declare your custom theme attribute -->
+    <attr name="colorWhite" format="color" />
+    <attr name="colorBlack" format="color" />
+    <attr name="colorViolet" format="color" />
+    <attr name="colorLightViolet" format="color" />
+    <attr name="colorDarkViolet" format="color" />
+    <attr name="colorPurple" format="color" />
+    <attr name="colorBlue" format="color" />
+    <attr name="colorDarkBlue" format="color" />
+    <attr name="colorRed" format="color" />
+
+</resources>

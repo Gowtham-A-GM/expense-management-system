@@ -1,0 +1,13 @@
+# Secrets
+backend/src/main/resources/serviceAccountKey.json
+.env
+
+# Android
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+
+# Backend
+node_modules/

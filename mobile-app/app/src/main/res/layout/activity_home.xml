@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorWhite">
+
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="48dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Expense Tracker"
+            android:textColor="?attr/colorWhite"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/avatarCard"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="?attr/colorDarkBlue"
+            android:clipToOutline="true"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:strokeColor="?attr/colorWhite"
+            app:strokeWidth="2dp">
+
+            <ImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_logout" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <!-- Whole top-rounded layout -->
+    <LinearLayout
+        android:id="@+id/topContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_layout"
+        android:background="@drawable/bg_screen_top_round"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="SUMMARY"
+            android:textColor="?attr/colorDarkBlue"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Summary Card-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_summary_card"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <!--Upper Part-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="OVERALL SPENDINGS"
+                    android:textColor="?attr/colorWhite"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTotalMoney"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="end"
+                    android:text="₹XX, XXX"
+                    android:textColor="?attr/colorWhite"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!--Lower Part : 4 Pill Category Cards-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <!-- Food -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_pill"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Food"
+                        android:textColor="?attr/colorDarkBlue"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvFoodMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="₹1200"
+                        android:textColor="?attr/colorDarkBlue"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Travel -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_pill"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Travel"
+                        android:textColor="?attr/colorDarkBlue"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvTravelMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="₹1200"
+                        android:textColor="?attr/colorDarkBlue"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Shopping -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_pill"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Shopping"
+                        android:textColor="?attr/colorDarkBlue"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvShoppingMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="₹1200"
+                        android:textColor="?attr/colorDarkBlue"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Others -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_pill"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Others"
+                        android:textColor="?attr/colorDarkBlue"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvOthersMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="₹1200"
+                        android:textColor="?attr/colorDarkBlue"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Separator -->
+    <View
+        android:id="@+id/sep1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/topContainer"
+        android:background="?attr/colorDarkBlue" />
+
+    <!-- Month Selector -->
+    <LinearLayout
+        android:id="@+id/monthSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sep1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="‹"
+            android:textColor="?attr/colorDarkBlue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="21, Friday, November, 2025"
+            android:textColor="?attr/colorDarkBlue"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="›"
+            android:textColor="?attr/colorDarkBlue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Separator -->
+    <View
+        android:id="@+id/sep2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/monthSelector"
+        android:background="?attr/colorDarkBlue" />
+
+    <!-- CATEGORY SELECTOR -->
+    <LinearLayout
+        android:id="@+id/categorySelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sep2"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/chipAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_chip_unselected"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="All"
+            android:textColor="?attr/colorDarkBlue"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chipFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_chip_unselected"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Food"
+            android:textColor="?attr/colorDarkBlue"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chipTravel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_chip_unselected"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Travel"
+            android:textColor="?attr/colorDarkBlue"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chipShopping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_chip_unselected"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Shopping"
+            android:textColor="?attr/colorDarkBlue"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chipOthers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_chip_unselected"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Others"
+            android:textColor="?attr/colorDarkBlue"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Expense Listing -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvExpenses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/categorySelector"
+        android:layout_marginTop="10dp"
+        android:padding="14dp" />
+
+    <!-- Floating Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:backgroundTint="?attr/colorBlue"
+        android:src="@drawable/ic_add" />
+
+</RelativeLayout>
